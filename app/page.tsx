@@ -42,16 +42,15 @@ export default function Home() {
 
       const url = URL.createObjectURL(response.data);
       setProcessedImage(url);
-    } catch (error) {
-      console.error('Error removing background:', error);
-      alert('Failed to remove background. Please try again.');
+    } catch (_) {
+      console.error('Error removing background');
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-black p-4">
       <Card className="w-full max-w-md">
         <CardHeader>
           <CardTitle>Remove Background</CardTitle>
