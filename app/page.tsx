@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import axios from 'axios';
+import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Card, CardHeader, CardTitle, CardContent, CardFooter } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -43,20 +44,21 @@ export default function Home() {
       setProcessedImage(url);
     } catch (error) {
       console.error('Error removing background:', error);
+      alert('Failed to remove background. Please try again.');
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-black p-4">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4">
       <Card className="w-full max-w-md">
-        <CardHeader style={{ textAlign: 'center', padding: '20px' }}>  
-          <CardTitle style={{ fontSize: '24px', fontWeight: 'bold' }}>Gomma</CardTitle>   
+        <CardHeader>
+          <CardTitle>Remove Background</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="space-y-4">
-            <Label htmlFor="image">Upload Image:</Label>
+            <Label htmlFor="image">Upload Image</Label>
             <Input id="image" type="file" accept="image/*" onChange={handleImageUpload} />
           </div>
         </CardContent>
@@ -72,7 +74,13 @@ export default function Home() {
             <CardTitle>Processed Image</CardTitle>
           </CardHeader>
           <CardContent>
-            <img src={processedImage} alt="Processed" className="w-full rounded-md" />
+            <Image
+              src={processedImage}
+              alt="Processed"
+              width={500}
+              height={300}
+              className="w-full rounded-md"
+            />
           </CardContent>
           <CardFooter>
             <a
