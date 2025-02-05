@@ -4,9 +4,8 @@ import { useState } from 'react';
 import axios from 'axios';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import { Card, CardHeader, CardTitle, CardContent, CardFooter } from '@/components/ui/card';
+import { Card, CardHeader, CardContent, CardFooter } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
 import { Spinner } from '@/components/ui/spinner';
 
 export default function Home() {
@@ -50,29 +49,27 @@ export default function Home() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-black p-4">
-      <Card className="w-full max-w-md">
-      <CardHeader className="flex items-center p-4 space-x-2"> 
-        <img src="/logo.png" alt="Logo" className="w-12 h-auto" />  
-      </CardHeader>
+    <div className="flex flex-col items-center justify-center min-h-screen p-4">
+      <Card className="w-full max-w-xl border-none shadow-none">
+        <CardHeader className="flex items-center p-4 space-x-2">   
+          <div className="flex items-center space-x-4">
+            <img src="/logo.png" alt="Logo" className="w-16 h-auto" />  
+            <span className="text-5xl font-bold">Gomma</span>  
+          </div>
+        </CardHeader>
+        <br />
 
         <CardContent>
-          <div className="space-y-4">
-            <Label htmlFor="image">Upload Image:</Label>
-            <Input id="image" type="file" accept="image/*" onChange={handleImageUpload} />
+          <div className="flex space-x-4">
+            <Input id="image" type="file" accept="image/*" onChange={handleImageUpload} className="flex-1" />
+            <Button onClick={removeBackground} disabled={!image || loading} className="w-auto">
+              {loading ? <Spinner /> : 'Remove'}
+            </Button>
           </div>
         </CardContent>
-        <CardFooter>
-          <Button onClick={removeBackground} disabled={!image || loading} className="w-full">
-            {loading ? <Spinner /> : 'Remove Background'}
-          </Button>
-        </CardFooter>
       </Card>
       {processedImage && (
-        <Card className="w-full max-w-md mt-4">
-          <CardHeader>
-            <CardTitle>Processed Image</CardTitle>
-          </CardHeader>
+        <Card className="w-full max-w-xl border-none shadow-none mt-4">
           <CardContent>
             <Image
               src={processedImage}
@@ -88,7 +85,7 @@ export default function Home() {
               download="processed-image.png"
               className="w-full"
             >
-              <Button className="w-full">Download Image</Button>
+              <Button className="w-full">Download</Button>
             </a>
           </CardFooter>
         </Card>
