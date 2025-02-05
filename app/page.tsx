@@ -52,12 +52,13 @@ export default function Home() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-black p-4">
       <Card className="w-full max-w-md">
-        <CardHeader>
-          <CardTitle>Remove Background</CardTitle>
-        </CardHeader>
+      <CardHeader className="flex items-center p-4 space-x-2"> 
+        <img src="/logo.png" alt="Logo" className="w-12 h-auto" />  
+      </CardHeader>
+
         <CardContent>
           <div className="space-y-4">
-            <Label htmlFor="image">Upload Image</Label>
+            <Label htmlFor="image">Upload Image:</Label>
             <Input id="image" type="file" accept="image/*" onChange={handleImageUpload} />
           </div>
         </CardContent>
