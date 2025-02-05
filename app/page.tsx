@@ -49,11 +49,11 @@ export default function Home() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen p-4">
+    <div className="container mx-auto min-h-full flex items-center justify-center w-full mt-16">
       <Card className="w-full max-w-xl border-none shadow-none">
         <CardHeader className="flex items-center p-4 space-x-2">   
           <div className="flex items-center space-x-4">
-            <img src="/logo.png" alt="Logo" className="w-16 h-auto" />  
+            <img src="/logo.png" alt="Logo" className="w-14 h-auto" />  
             <span className="text-5xl font-bold">Gomma</span>  
           </div>
         </CardHeader>
