@@ -1,17 +1,16 @@
 # Gomma 
 
-A web application that removes backgrounds from images using AI technology. Built with Next.js.
+A web application that removes backgrounds from images. Built with Next.js.
 
 ## Features
 
 - **AI-Powered Background Removal** - Remove backgrounds instantly with high precision
 - **Drag & Drop Interface** - Simply drag your images or click to upload
 - **Real-time Preview** - See your original and processed images side by side
-- **Modern UI** - Clean, minimalist design with glassmorphism effects
 - **Responsive Design** - Works perfectly on desktop and mobile devices
 - **High Quality Output** - Download processed images in PNG format
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Framework**: Next.js 14 (App Router)
 - **Styling**: Tailwind CSS
