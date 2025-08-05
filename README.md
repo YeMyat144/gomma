@@ -1,36 +1,64 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Gomma 
 
-## Getting Started
+A web application that removes backgrounds from images. Built with Next.js.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **AI-Powered Background Removal** - Remove backgrounds instantly with high precision
+- **Drag & Drop Interface** - Simply drag your images or click to upload
+- **Real-time Preview** - See your original and processed images side by side
+- **Responsive Design** - Works perfectly on desktop and mobile devices
+- **High Quality Output** - Download processed images in PNG format
+
+## Tech Stack
+
+- **Framework**: Next.js 14 (App Router)
+- **Styling**: Tailwind CSS
+- **UI Components**: shadcn/ui
+- **Icons**: Lucide React
+- **API**: Remove.bg API
+- **Language**: TypeScript
+
+## Project Structure
+
+```
+gomma/
+├── app/
+│   ├── globals.css          # Global styles and animations
+│   ├── layout.tsx           # Root layout
+│   └── page.tsx             # Main application page
+├── components/
+│   └── ui/                  # Reusable UI components
+│       ├── button.tsx
+│       ├── card.tsx
+│       ├── input.tsx
+│       ├── label.tsx
+│       └── spinner.tsx
+├── lib/
+│   └── utils.ts             # Utility functions
+├── public/
+│   └── logo.png             # Application logo
+└── tailwind.config.ts       # Tailwind configuration
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Supported Image Formats
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- JPG/JPEG
+- PNG
+- WebP
+- Maximum file size: 10MB
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Usage
 
-## Learn More
+1. **Upload an Image**
+   - Drag and drop an image onto the upload area
+   - Or click to browse and select a file
 
-To learn more about Next.js, take a look at the following resources:
+2. **Remove Background**
+   - Click the "Remove Background" button
+   - Wait for AI processing (usually 2-5 seconds)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. **Download Result**
+   - Preview the before/after comparison
+   - Click "Download Your Image" to save the result
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
