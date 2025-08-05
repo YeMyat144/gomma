@@ -79,50 +79,54 @@ export default function Home() {
 
         <div className="max-w-4xl mx-auto">
           {/* Upload Section */}
-          <div className="mb-8">
+            <div className="mb-8">
             <div className="file-input-wrapper">
               <input id="image-upload" type="file" accept="image/*" onChange={handleImageUpload} />
               <label htmlFor="image-upload" className={`file-input-label ${image ? "has-file" : ""}`}>
-                {imagePreview ? (
-                  <div className="relative w-full h-full flex items-center justify-center p-4">
-                    <Image
-                      src={imagePreview || "/placeholder.svg"}
-                      alt="Preview"
-                      width={200}
-                      height={200}
-                      className="max-h-32 w-auto object-contain rounded-lg"
-                    />
-                  </div>
-                ) : (
-                  <div className="text-center">
-                    <Upload className="w-8 h-8 text-muted-foreground mb-1 mx-auto" />
-                    <p className="text-lg font-medium mb-2">Drop your image here</p>
-                    <p className="text-muted-foreground">or click to browse</p>
-                  </div>
-                )}
+              {imagePreview ? (
+                <div className="relative w-full h-full flex items-center justify-center p-4">
+                <Image
+                  src={imagePreview || "/placeholder.svg"}
+                  alt="Preview"
+                  width={200}
+                  height={200}
+                  className="max-h-32 w-auto object-contain rounded-lg"
+                />
+                </div>
+              ) : (
+                <div className="text-center">
+                <Upload className="w-8 h-8 text-muted-foreground mb-1 mx-auto" />
+                <p className="text-lg font-medium mb-2">Drop your image here</p>
+                <p className="text-muted-foreground">or click to browse</p>
+                </div>
+              )}
               </label>
             </div>
 
             {/* Action Buttons */}
             {image && (
               <div className="flex gap-3 mt-6 justify-center">
-                <Button onClick={removeBackground} disabled={loading} className="px-8 py-3 text-lg font-medium">
-                  {loading ? (
-                    <>
-                      <Spinner />
-                      Processing...
-                    </>
-                  ) : (
-                    "Remove Background"
-                  )}
-                </Button>
-                <Button onClick={clearImage} variant="outline" className="px-6 py-3 bg-transparent">
-                  <Trash2 className="w-4 h-4 mr-2" />
-                  Clear
-                </Button>
+              <Button
+                onClick={removeBackground}
+                disabled={loading}
+                className="px-8 py-3 text-lg font-medium bg-red-600 hover:bg-red-700 text-white"
+              >
+                {loading ? (
+                <>
+                  <Spinner />
+                  Processing...
+                </>
+                ) : (
+                "Remove Background"
+                )}
+              </Button>
+              <Button onClick={clearImage} variant="outline" className="px-6 py-3 bg-transparent">
+                <Trash2 className="w-4 h-4 mr-2" />
+                Clear
+              </Button>
               </div>
             )}
-          </div>
+            </div>
 
           {/* Results Section */}
           {processedImage && (
@@ -176,14 +180,17 @@ export default function Home() {
               </div>
 
               {/* Download Button */}
-              <div className="text-center">
+                <div className="text-center">
                 <a href={processedImage} download="background-removed.png">
-                  <Button size="lg" className="px-8 py-3 text-lg font-medium">
-                    <Download className="w-5 h-5 mr-2" />
-                    Download Image
+                  <Button
+                  size="lg"
+                  className="px-8 py-3 text-lg font-medium bg-red-600 hover:bg-red-700 text-white"
+                  >
+                  <Download className="w-5 h-5 mr-2" />
+                  Download Image
                   </Button>
                 </a>
-              </div>
+                </div>
             </div>
           )}
         </div>
