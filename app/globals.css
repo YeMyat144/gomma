@@ -31,7 +31,7 @@
   align-items: center;
   justify-content: center;
   min-height: 120px;
-  border: 2px dashed hsl(0, 73%, 67%);
+  border: 2px dashed hsl(0, 0%, 0%);
   border-radius: 12px;
   transition: all 0.3s ease;
   background: hsl(0, 0%, 100%);
@@ -39,7 +39,7 @@
 
 .file-input-label:hover {
   border-color: hsl(0, 84%, 60%);
-  background: hsl(0, 33%, 98%);
+  background: hsl(0, 0%, 98%);
 }
 
 .file-input-label.has-file {
