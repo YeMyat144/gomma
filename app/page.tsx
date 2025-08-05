@@ -96,8 +96,7 @@ export default function Home() {
               ) : (
                 <div className="text-center">
                 <Upload className="w-8 h-8 text-muted-foreground mb-1 mx-auto" />
-                <p className="text-lg font-medium mb-2">Drop your image here</p>
-                <p className="text-muted-foreground">or click to browse</p>
+                <p className="text-lg font-medium mb-2">Click to browse</p>
                 </div>
               )}
               </label>
